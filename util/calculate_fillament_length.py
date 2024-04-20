@@ -1,6 +1,6 @@
 import math
 
-def calculate_filament_length(diameter_cm, filament_diameter_cm=1.75/10):
+def calculate_filament_length(diameter_cm, filament_diameter_cm):
     # 원의 둘레 계산
     circumference_cm = math.pi * diameter_cm
     
@@ -16,8 +16,11 @@ def calculate_filament_length(diameter_cm, filament_diameter_cm=1.75/10):
         total_filament_length_cm += circumference_cm + layer * filament_increase_per_layer
         
     return total_filament_length_cm
-  
-# 원의 지름설정
-diameter = 50  
-needed_filament_length = calculate_filament_length(diameter)
+
+# input parameter 
+diameter = 50                    # 원의 지름설정(cm)
+filament_diameter_cm = 1.75      # 필라멘트 두께 설정(cm)
+needed_filament_length = calculate_filament_length(diameter,filament_diameter_cm/10)
+
+# print result 
 print(f"지름 {diameter}cm 원에 필요한 필라멘트 길이는 약 {needed_filament_length:.2f}cm 입니다.")
