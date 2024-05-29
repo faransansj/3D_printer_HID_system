@@ -1,7 +1,0 @@
-{
-  "api_key": "YOUR_API_KEY",
-  "key_gcode_mapping": {
-    "a": "G28",
-    "b": "G29",
-  }
-}
